@@ -1,0 +1,5 @@
+main {
+  padding: 20px;
+  height: 2000px; /* เพื่อให้เลื่อนหน้าได้ */
+  background: linear-gradient(to bottom, #ffacf4, #e0e0e0);
+}
