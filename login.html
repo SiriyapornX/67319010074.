@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เข้าสู่ระบบ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="login-form">
+  <h2>เข้าสู่ระบบ</h2>
+  <form action="login_process.php" method="post">
+    <label for="email">อีเมล</label>
+    <input type="email" name="email" placeholder="กรอกอีเมล" required>
+
+    <label for="password">รหัสผ่าน</label>
+    <input type="password" name="password" placeholder="รหัสผ่าน" required>
+
+    <label>
+      <input type="checkbox" name="remember"> จดจำฉันไว้ในระบบ
+    </label>
+
+    <button type="submit">เข้าสู่ระบบ</button>
+
+    <p class="form-links">
+      ยังไม่มีบัญชี? <a href="signup.html">สมัครสมาชิก</a><br>
+      ลืมรหัสผ่าน? <a href="#">คลิกที่นี่</a>
+    </p>
+
+    <button type="button" class="cancel" onclick="window.location.href='index.html'">กลับหน้าแรก</button>
+  </form>
+</div>
+
+</body>
+</html>
