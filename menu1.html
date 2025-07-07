@@ -44,9 +44,177 @@
 </div>
     </nav>
   </header>
+</body>
+</html>
+  </header>
+
 
 <body>
+<meta charset="UTF-8">
+  <title>สไลด์โชว์เพิ่มเติม</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: sans-serif; margin: 0; background-color: #f0f0f0; }
 
+    .slideshow-container {
+      position: relative;
+      max-width: 1920px;
+      margin: 25px;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* ปุ่มลูกศร */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.3s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    /* จุดวงกลม */
+    .dot-container {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+  </style>
+</head>
+<head>
+ 
+<!DOCTYPE html>
+<html>
+ 
+</html>
+<!-- แบบฟอร์มสมัครสมาชิกย่อ -->
+<section class="signup-short">
+  <link rel="stylesheet" href="signup-short.css">
+  <p>ต้องการรับโปรโมชั่นก่อนใคร?</p>
+  <a href="signup.html">
+    <button class="signup-btn">สมัครเลย</button>
+    <a href="login.html">
+    <button class="signup-btn">เข้าสู่ระบบ</button>
+  </a>
+</section>
+
+<div class="slideshow-container">
+
+  <div class="mySlides">
+    <img src="5.png" alt="1">
+  </div>
+
+  <div class="mySlides">
+    <img src="1.png" alt="2">
+  </div>
+
+  <div class="mySlides">
+    <img src="2.png" alt="2">
+  </div>
+
+  <div class="mySlides">
+    <img src="3.png" alt="2">
+  </div>
+
+  <div class="mySlides">
+    <img src="4.png" alt="3">
+  </div>
+
+  <!-- ปุ่มลูกศร -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- จุดวงกลม -->
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+let autoSlideTimeout;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  clearTimeout(autoSlideTimeout);
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  clearTimeout(autoSlideTimeout);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }    
+  if (n < 1) { slideIndex = slides.length }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].classList.add("active");
+
+  // สไลด์อัตโนมัติหลังจาก 3 วินาที
+  autoSlideTimeout = setTimeout(() => {
+    plusSlides(1);
+  }, 3000);
+}
+
+  // เริ่มแสดงภาพ
+  showSlides(slideIndex);
+  autoSlide();
+</script>
 <h1>ร้านสุขเสิร์ฟ</h1>
 <h1>เมนูอาหารคาว</h1>
 
