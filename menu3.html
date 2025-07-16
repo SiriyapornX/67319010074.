@@ -46,6 +46,7 @@
     </nav>
   </header>
 
+  
 <body>
  <meta charset="UTF-8">
   <title>สไลด์โชว์เพิ่มเติม</title>
@@ -117,6 +118,165 @@
   </style>
 </head>
 <body>
+
+ </script>
+</body>
+</html>
+
+ <!DOCTYPE html>
+<html>
+ 
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ระบบค้นหา</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ค้นหาอาหารพร้อมรูป</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    li img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 12px;
+    }
+    li span {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ค้นหาอาหาร 🍲</h2>
+    <input type="text" id="searchInput" placeholder="พิมพ์ชื่ออาหาร..." />
+    <ul id="foodList"></ul>
+  </div>
+
+  <script>
+    const foods = [
+  { "name": "ชาเขียว", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTquug0yzFmmAP1UVa8LLTro_egcT9qmdaphQ&s" },
+  { "name": "อเมริกาโน่", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBWjiAgCjD1BcqjKrKOJIOjoJ-mktS0N-1YA&s" },
+  { "name": "นมสดสตอเบอรี่", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq8hf2V_Wzh9EUT5g6jHf4kez_DsdpJLM_2g&s" },
+  { "name": "ชามะนาว", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCirjMiwvyGW4Z5gFlX3VOV1_B7k-ICAXVCg&s" },
+  { "name": "ชาไทย", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEfomg1L44U9M-C-aqwSf__vA5Q7mp5Ill_Q&s" },
+  { "name": "โอเลี้ยง", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2xLp-VjIu3pTtbBgXiKbMN4RnDNe3-qn3Ug&s" },
+  { "name": "กล้วยปั่น", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK5wfrZDfmyF7bFNVZYgiiZ06y6myLZWCpgA&s" },
+  { "name": "แตงโมปั่น", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqBw6zjwTmdgBYI5xFAVyaQx3T75S8BndJtw&s" },
+  { "name": "น้ำสับปะรดปั่น", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVUCG6xaNxRcKl73BvXLG-y15CDKtQvARig&s" },
+  { "name": "เมล่อนปั่น", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Rj5B3aMt4OAN_NtW_8wAP7SorLDc8XQtCg&s" },
+  { "name": "น้ำมะพร้าวปั่น", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvByBNdV13KEHehZot_TxXdTB2SU3YyWmNCA&s" },
+  { "name": "น้ำส้มปั่น", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN1nHpVx4NDdAs33kCRHU5L5EUBZqkfinICg&s" }
+    ];
+
+    const input = document.getElementById('searchInput');
+    const foodList = document.getElementById('foodList');
+
+    input.addEventListener('input', () => {
+      const keyword = input.value.trim().toLowerCase();
+      foodList.innerHTML = '';
+      if (!keyword) return;
+
+      const results = foods.filter(food =>
+        food.name.toLowerCase().includes(keyword)
+      );
+
+      if (results.length === 0) {
+        foodList.innerHTML = '<li><span>ไม่พบอาหาร</span></li>';
+        return;
+      }
+
+      results.forEach(food => {
+        const li = document.createElement('li');
+        li.innerHTML = `<img src="${food.img}" alt="${food.name}"><span>${food.name}</span>`;
+        foodList.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
+
+
 
 <div class="slideshow-container">
 

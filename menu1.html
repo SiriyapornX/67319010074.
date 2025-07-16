@@ -7,14 +7,15 @@
 <link rel="stylesheet" href="style2.css">
 </head>
 <header>
-  
-</styie>
+ 
 </head>
 <body>
  <link rel="stylesheet" href="style3.css"> 
   <link rel="stylesheet" href="style4.css">
    <link rel="stylesheet" href="style5.css">
- 
+
+   
+
    <div class="menu-bar">
   <div class="menu-logo">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNlPYwgSgKqmRxP2Fl3Hlsy0DHvYkT_b19tT48iajafuT4MTWZ_8isf3xa8P8GK3QZ7xI&usqp=CAU" alt="7-Eleven">
@@ -120,10 +121,166 @@
   </style>
 </head>
 <head>
+</body>
+  
+  </script>
+</body>
+</html>
  
 <!DOCTYPE html>
 <html>
  
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ระบบค้นหา</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ค้นหาอาหารพร้อมรูป</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    li img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 12px;
+    }
+    li span {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ค้นหาอาหาร 🍲</h2>
+    <input type="text" id="searchInput" placeholder="พิมพ์ชื่ออาหาร..." />
+    <ul id="foodList"></ul>
+  </div>
+
+  <script>
+    const foods = [
+ { "name": "ข้าวผัดกุ้ง", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKd_JfBdDYlfJQ208Q9KFxjgtu8vlO_scJeA&s" },
+  { "name": "ข้าวมันไก่", "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTUMKBMB-t7uQ9LomM6d64ZL0tQI0j3vakuwEP94svDX9vrMZ3DMgIDf6UKlomAuB-Gy9ym1xkF6qeo0Vlew5350TXONDTcFIJVKDAeKL3m" },
+  { "name": "พะโล้หมู", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5xUONbG_DAPBB81SfHkpkQd3hC87SucnQzQ&s" },
+  { "name": "ผัดผักบุ้ง", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwkumo07CgZoItCXbT8JssjNHJXLyP6OWCg&s" },
+  { "name": "ต้มจืดหมู", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSm0KQbgX7qgpdiZC_yOfZM1HNwMFc38Yf6Q&s" },
+  { "name": "ข้าวขาหมู", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT23alaopRY2a6ZIRA9hHWHEJv9Fmtc94kI0Q&s" },
+  { "name": "ลาบหมู", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKTchOYCE9iL-qetdhOJUe1sS8zo2Hjgz8Og&s" },
+  { "name": "สลัดผักสด", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJX7jpwKDtOx6A1_lzB6IyNnuvK5WpvBHxA&s" },
+  { "name": "ข้าวต้มกุ้ง", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJnT_ecp-imhbJY0IeLq_IQoQhGEz_ubIIOQ&s" },
+  { "name": "ต้มแซ่บ", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLkG7TWxwycW--dBx56EttcH9Mg03RivdnEg&s" },
+  { "name": "ทอดไข่เจียว", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr6eGAnaqNrKzgPPTjrXKMoavEAoJVB_kGLA&s" },
+  { "name": "ก๋วยเตี๋ยวหมู", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQrcMAX-ySVHBYbNtj9sdPkzTVBkTUOm8StQ&s" }
+]
+
+    const input = document.getElementById('searchInput');
+    const foodList = document.getElementById('foodList');
+
+    input.addEventListener('input', () => {
+      const keyword = input.value.trim().toLowerCase();
+      foodList.innerHTML = '';
+      if (!keyword) return;
+
+      const results = foods.filter(food =>
+        food.name.toLowerCase().includes(keyword)
+      );
+
+      if (results.length === 0) {
+        foodList.innerHTML = '<li><span>ไม่พบอาหาร</span></li>';
+        return;
+      }
+
+      results.forEach(food => {
+        const li = document.createElement('li');
+        li.innerHTML = `<img src="${food.img}" alt="${food.name}"><span>${food.name}</span>`;
+        foodList.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
+
+
 </html>
 <!-- แบบฟอร์มสมัครสมาชิกย่อ -->
 <section class="signup-short">
@@ -217,6 +374,7 @@ function showSlides(n) {
 </script>
 <h1>ร้านสุขเสิร์ฟ</h1>
 <h1>เมนูอาหารคาว</h1>
+
 
 <div class="food-list">
   <div class="food-item">
@@ -370,6 +528,8 @@ function showSlides(n) {
         <a href="#" style="color: #333; text-decoration: none;" title="Instagram">📸</a>
         <a href="#" style="color: #333; text-decoration: none;" title="LINE">💬</a>
       </div>
+
+      
       <p>โปรโมชั่น</p>
       <form>
         <label for="email" style="display:none;">อีเมลสำหรับรับโปรโมชั่น</label>
@@ -377,6 +537,7 @@ function showSlides(n) {
         <button type="submit" style="padding: px 15px; border: none; background: #800000; color: white; border-radius: 5px; cursor: pointer;">เข้าร่วม</button>
       </form>
     </div>
+    
 
     <!-- ดาวน์โหลดแอป -->
     <div style="flex: 1; min-width: 220px; margin-bottom: 30px;">

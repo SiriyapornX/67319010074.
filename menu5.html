@@ -118,6 +118,218 @@
 </head>
 <body>
 
+</script>
+</body>
+</html>
+
+ <!DOCTYPE html>
+<html>
+ 
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ระบบค้นหา</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+</body>
+</html>
+
+ <!DOCTYPE html>
+<html>
+ 
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ระบบค้นหา</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);   
+    }
+  </style>
+</head>
+<body>
+
+  <!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ค้นหาอาหารพร้อมรูป</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    li img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 12px;
+    }
+    li span {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ค้นหาอาหาร 🍲</h2>
+    <input type="text" id="searchInput" placeholder="พิมพ์ชื่ออาหาร..." />
+    <ul id="foodList"></ul>
+  </div>
+
+  <script>
+    const foods = [
+     { name: "เค้กโอริโอ้", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2xSbLqz7Bp5s3NDYrw26eQp4z4x-loEXpMA&s", price: 199, link: "https://example.com/oreo-cake" },
+    { name: "เค้กมันม่วง", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDJ2FUojtovqgG_0uUcsAXzEzcvxq2CIpZug&s", price: 199, link: "https://example.com/purple-sweet-potato-cake" },
+    { name: "เค้กเผือก", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs5r63xhGcFetJ6DrpETJwzbBb6I61saHeVw&s", price: 199, link: "https://example.com/taro-cake" },
+    { name: "เค้กมะพร้าวอ่อน", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbCAEtj0l3JMGD6TwnubqEDOZsX3HP2ghCgA&s", price: 259, link: "https://example.com/young-coconut-cake" },
+    { name: "เค้กบานอฟฟี่", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsIU0DRzjXwvzVswJc7BbtjN1DIIrMTfUDRw&s", price: 259, link: "https://example.com/banoffee-cake" },
+    { name: "เค้กชาไทย", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSab_ap6EP8QslKfmi4BO-WsHh3A57WsMd2Ng&s", price: 199, link: "https://example.com/thai-tea-cake" },
+    { name: "เค้กชาเขียวมัทฉะ", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmsPWMr1kg0ZSuI_NIYHdyNR-mYrGBPv0SIA&s", price: 259, link: "https://example.com/matcha-cake" },
+    { name: "เค้กวนิลา", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt5d8JQtDXlQwjfD1h4HBzxEJQ6JUl1NTmtA&s", price: 199, link: "https://example.com/vanilla-cake" },
+    { name: "เค้กฝอยทอง", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIZpZScIbp_LRNlZ5jExJU6LyRKfS1oyWaSA&s", price: 259, link: "https://example.com/foi-thong-cake" },
+    { name: "เค้กสตรอว์เบอร์รี่สด", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7tFE_tfkGAoJ4XHS_LxQVPFUEjUCHjm0V7A&s", price: 259, link: "https://example.com/fresh-strawberry-cake" },
+    { name: "เค้กส้มหน้านิ่ม", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhNtQtH7dyUcmI1_aZc8V5de_AdM6JUexdDA&s", price: 199, link: "https://example.com/orange-soft-cake" },
+    { name: "ช็อกโกแลตลาวา", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9GJYghrawX6rZ76ihBH9R8BJDWt7rIIwIrg&s", price: 199, link: "https://example.com/chocolate-lava" }
+    ];
+
+    const input = document.getElementById('searchInput');
+    const foodList = document.getElementById('foodList');
+
+    input.addEventListener('input', () => {
+      const keyword = input.value.trim().toLowerCase();
+      foodList.innerHTML = '';
+      if (!keyword) return;
+
+      const results = foods.filter(food =>
+        food.name.toLowerCase().includes(keyword)
+      );
+
+      if (results.length === 0) {
+        foodList.innerHTML = '<li><span>ไม่พบอาหาร</span></li>';
+        return;
+      }
+
+      results.forEach(food => {
+        const li = document.createElement('li');
+        li.innerHTML = `<img src="${food.img}" alt="${food.name}"><span>${food.name}</span>`;
+        foodList.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
+
+
 <div class="slideshow-container">
 
   <div class="mySlides">

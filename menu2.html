@@ -117,6 +117,165 @@
 </head>
 <body>
 
+   </script>
+</body>
+</html>
+
+ <!DOCTYPE html>
+<html>
+ 
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ระบบค้นหา</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ค้นหาอาหารพร้อมรูป</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    li img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 12px;
+    }
+    li span {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ค้นหาอาหาร 🍲</h2>
+    <input type="text" id="searchInput" placeholder="พิมพ์ชื่ออาหาร..." />
+    <ul id="foodList"></ul>
+  </div>
+
+  <script>
+    const foods = [
+    { "name": "ข้าวเหนียวมะม่วง", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZNhbE9fMCaInFjZnQT-pgKyd5xj2Xjh1Z_A&s" },
+  { "name": "ไอติมมะพร้าว", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTooJX0lIVAoCLwKZthsgMPXQkNhSRYP4IrQ&s" },
+  { "name": "ขนมดอกบัว", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJtn6a64C_7RM2FaxUHV22bQmiMEPfWhvwOg&s" },
+  { "name": "ขนมชั้น", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4_tU6l7FolompqUYpJ8JF3WzTRjW4bySAfQ&s" },
+  { "name": "บัวลอยไข่หวาน", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH1HqRNnF2GfwCl-fQYyMSX4MY1PafQPuTkQ&s" },
+  { "name": "ทองหยอด", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHgLIqZRpmbE0Xb2eFX-XvJ1PhRIGhPEbuw&s" },
+  { "name": "ขนมถ้วยฟู", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_t2xxa-rFXLJJVxKN5m0sTic2smE3BIR2g&s" },
+  { "name": "ขนมครก", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbaw1yzyNF-0HN6V3M2hbH1WYHZAWNX89DrQ&s" },
+  { "name": "กล้วยบวชชี", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh-a-04fCj5fK7yyCuYJhvHy78gAQrrI-ldA&s" },
+  { "name": "ลอดช่องน้ำกะทิ", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjlj-lcPwSyTOpVpVurPChR_-Ib9FgmBKqEw&s" },
+  { "name": "ลูกชุบ", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRChmEKC33fbVGv5kWnF14gjfMtOHnqNW7Bhg&s" },
+  { "name": "ขนมไข่นกกระทา", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-wqkUvcNDgrVcySmCKWvhLzPi1Xgv5WBrXQ&s" }
+]
+
+    const input = document.getElementById('searchInput');
+    const foodList = document.getElementById('foodList');
+
+    input.addEventListener('input', () => {
+      const keyword = input.value.trim().toLowerCase();
+      foodList.innerHTML = '';
+      if (!keyword) return;
+
+      const results = foods.filter(food =>
+        food.name.toLowerCase().includes(keyword)
+      );
+
+      if (results.length === 0) {
+        foodList.innerHTML = '<li><span>ไม่พบอาหาร</span></li>';
+        return;
+      }
+
+      results.forEach(food => {
+        const li = document.createElement('li');
+        li.innerHTML = `<img src="${food.img}" alt="${food.name}"><span>${food.name}</span>`;
+        foodList.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
 <div class="slideshow-container">
 
   <div class="mySlides">
@@ -306,7 +465,7 @@ function showSlides(n) {
   </div>
 </div>
 <bo
-</body><!-- Footer Section -->
+>/body><!-- Footer Section -->
 <footer style="background-color: #FFC0CB; color: #333; padding: 40px 20px; font-family: 'Sarabun', sans-serif;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
 
